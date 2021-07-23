@@ -1,0 +1,28 @@
+{
+  "name": "msaun008.powerdrill",
+  "description": "PowerDrill",
+  "version": "0.0.0",
+  "author": "msaun008",
+  "repository": {
+    "type": "git",
+    "url": "TODO: Add the GitHub URL to your extension in package.json"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "aha-cli": "1.10.0"
+  },
+  "ahaExtension": {
+    "contributes": {
+      "views": {
+        "powerdrill": {
+          "title": "PowerDrill",
+          "entryPoint": "src/views/init.js",
+          "host": "page",
+          "location": {
+            "menu": "Work"
+          }
+        }
+      }
+    }
+  }
+}
