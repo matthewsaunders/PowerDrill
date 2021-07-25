@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Loading from "./loading";
 import LinkedRecords from "./common/linkedRecords";
@@ -15,21 +15,16 @@ const Styles = () => {
 const Project = ({ powerDrillRecord, index, dispatch }) => {
   const record = powerDrillRecord.record;
 
-  const [showUsers, setShowUsers] = useState(false);
-  const [showReleases, setShowReleases] = useState(false);
-  const [showIterations, setShowIterations] = useState(false);
-
-  const handleIterationClick = (iterationId) => {
-    dispatch({
-      type: 'addRecord',
-      recordType: 'iteration',
-      id: iterationId,
-      index: index,
-    });
+  const handleRecordClick = (recordType) => {
+    return (recordId) => {
+      dispatch({
+        type: 'addRecord',
+        recordType: recordType,
+        id: recordId,
+        index: index,
+      });
+    };
   }
-
-  console.log('--> project');
-  console.log(powerDrillRecord.record);
 
   if (record) {
     return (
@@ -41,20 +36,20 @@ const Project = ({ powerDrillRecord, index, dispatch }) => {
         <div className="LinkedRecords__container">
           <LinkedRecords
             name="Users"
-            records={powerDrillRecord.linkedRecords.iterations}
-            handleRecordClick={handleIterationClick}
+            records={powerDrillRecord.record.users}
+            handleRecordClick={handleRecordClick("user")}
           />
 
           <LinkedRecords
             name="Releases"
-            records={powerDrillRecord.linkedRecords.iterations}
-            handleRecordClick={handleIterationClick}
+            records={powerDrillRecord.record.releases}
+            handleRecordClick={handleRecordClick("release")}
           />
 
           <LinkedRecords
             name="Iterations"
             records={powerDrillRecord.linkedRecords.iterations}
-            handleRecordClick={handleIterationClick}
+            handleRecordClick={handleRecordClick("iteration")}
           />
 
         </div>

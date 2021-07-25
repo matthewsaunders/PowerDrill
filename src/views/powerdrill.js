@@ -31,9 +31,14 @@ const Styles = () => {
     .PowerDrill__row > div:first-child {
       margin-left: 8px;
     }
+    .PowerDrill__row > div:last-child {
+      margin-right: 8px;
+    }
+    .PowerDrill__row > div:not(:first-child) {
+      border-left: none;
+    }
     .PowerDrill__column {
-      border: 1px solid black;
-      border-radius: 2px;
+      border: 2px solid black;
       background-color: white;
       min-height: 100%;
       height: 100%;

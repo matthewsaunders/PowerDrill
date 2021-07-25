@@ -18,6 +18,7 @@ const Styles = () => {
     }
     .LinkedRecords__typeToggleContainer {
       width: 10px;
+      height: 10px;
     }
     .LinkedRecords__typeToggleContainer:hover {
       cursor: pointer;

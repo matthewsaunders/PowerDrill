@@ -11,6 +11,10 @@ const Query = {
           path
           referenceNum
         }
+        users {
+          id
+          name
+        }
       }
     }
     `;
