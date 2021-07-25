@@ -62,67 +62,6 @@ const Styles = () => {
     .Record__viewBtn--details {
       border-radius: 0px 4px 4px 0px;
     }
-
-    .LinkedRecords {
-    }
-    .LinkedRecord {
-      margin: 12px 0px;
-    }
-    .LinkedRecord__type {
-      display: flex;
-      align-items: center;
-    }
-    .LinkedRecord__type > h4 {
-      padding: 0;
-      margin: 0;
-      margin-left: 8px;
-    }
-
-    .LinkedRecord__typeToggleContainer {
-      width: 10px;
-    }
-    .LinkedRecord__typeToggleContainer:hover {
-      cursor: pointer;
-    }
-    .LinkedRecord__typeToggle {
-      width: 0;
-      height: 0;
-    }
-    .LinkedRecord__typeToggle--closed {
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 6px solid black;
-    }
-    .LinkedRecord__typeToggle--opened {
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid black;
-
-    }
-
-    .LinkedRecord__recordsList {
-      list-style-type: none;
-      margin: 0;
-    }
-    .LinkedRecord__recordsList--hidden {
-      display: none;
-    }
-
-    .LinkedRecord__record {
-      padding: 8px;
-      margin: 8px 0px;
-      border: 1px solid black;
-      border-radius: 2px;
-    }
-
-    li {
-      margin: 0;
-      padding: 8px 6px;
-    }
-    li:hover {
-      background-color: var(--aha-blue-100);
-      cursor: pointer;
-    }
     `}
     </style>
   );
