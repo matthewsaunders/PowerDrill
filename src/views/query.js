@@ -36,7 +36,73 @@ const Query = {
     `;
   },
   iteration: (iterationId) => {
-    
+    return `
+    {
+      iteration(id: ${iterationId}) {
+        id
+        name
+        startDate
+        duration
+        status
+        description {
+          htmlBody
+        }
+        records {
+          ... on Feature {
+            id
+            name
+            path
+            assignedToUser {
+              avatarUrl
+            }
+            referenceNum
+            teamWorkflowStatus {
+              color
+              name
+            }
+            workflowStatus {
+              name
+              color
+            }
+          }
+          ... on Epic {
+            id
+            name
+            assignedToUser {
+              avatarUrl
+            }
+            path
+            referenceNum
+            teamWorkflowStatus {
+              color
+              name
+            }
+            workflowStatus {
+              color
+              name
+            }
+          }
+          ... on Requirement {
+            id
+            name
+            assignedToUser {
+              avatarUrl
+            }
+            path
+            referenceNum
+            teamWorkflowStatus {
+              color
+              name
+            }
+            workflowStatus {
+              color
+              name
+            }
+          }
+        }
+      }
+    }
+    `;
   },
   feature: (featureId) => {
     return `

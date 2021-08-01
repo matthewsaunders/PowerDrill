@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 
-import Record from "./record";
-import Query from "./query";
+import Record from "./Record";
+import Query from "./Query";
 
 const Styles = () => {
   return (
@@ -119,8 +119,12 @@ const fetchRecord = async (powerDrillRecord) => {
         },
       }
     case 'iteration':
-      const iteration = await aha.models.Iteration.select('id', 'name', 'status').find(powerDrillRecord.id);
-      const features = await aha.models.Feature.select('id', 'name').where({ projectId: aha.project.id, iterationId: powerDrillRecord.id }).all();
+      response = await aha.graphQuery(Query.iteration(powerDrillRecord.id));
+      console.log('response');
+      console.log(response);
+      const iteration = response.iteration;
+      // const iteration = await aha.models.Iteration.select('id', 'name', 'status').find(powerDrillRecord.id);
+      // const features = await aha.models.Feature.select('id', 'name').where({ projectId: aha.project.id, iterationId: powerDrillRecord.id }).all();
 
       // response = await aha.graphQuery(Query.iteration(powerDrillRecord.id));
       // const iteration = new aha.models.I(response.feature);
@@ -128,7 +132,7 @@ const fetchRecord = async (powerDrillRecord) => {
       return {
         record: iteration,
         linkedRecords: {
-          features: features,
+          records: iteration.records,
         },
       };
     case 'feature':

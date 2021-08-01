@@ -1,7 +1,7 @@
 import React from "react";
 
-import Loading from "./loading";
-import LinkedRecords from "./common/linkedRecords";
+import Loading from "./common/Loading";
+import CollapsableRecordList from "./common/CollapsableRecordList";
 
 const Styles = () => {
   return (
@@ -15,17 +15,6 @@ const Styles = () => {
 const Project = ({ powerDrillRecord, index, dispatch }) => {
   const record = powerDrillRecord.record;
 
-  const handleRecordClick = (recordType) => {
-    return (recordId) => {
-      dispatch({
-        type: 'addRecord',
-        recordType: recordType,
-        id: recordId,
-        index: index,
-      });
-    };
-  }
-
   if (record) {
     return (
       <div className="Record">
@@ -33,25 +22,27 @@ const Project = ({ powerDrillRecord, index, dispatch }) => {
 
         <h3 className="Record__name">{ record.name }</h3>
 
-        <div className="LinkedRecords__container">
-          <LinkedRecords
+        <div className="CollapsableRecordList__container">
+          <CollapsableRecordList
             name="Users"
             records={powerDrillRecord.record.users}
-            handleRecordClick={handleRecordClick("user")}
+            index={index}
+            dispatch={dispatch}
           />
 
-          <LinkedRecords
+          <CollapsableRecordList
             name="Releases"
             records={powerDrillRecord.record.releases}
-            handleRecordClick={handleRecordClick("release")}
+            index={index}
+            dispatch={dispatch}
           />
 
-          <LinkedRecords
+          <CollapsableRecordList
             name="Iterations"
             records={powerDrillRecord.linkedRecords.iterations}
-            handleRecordClick={handleRecordClick("iteration")}
+            index={index}
+            dispatch={dispatch}
           />
-
         </div>
         
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Loading from "./loading";
+import Loading from "./common/Loading";
 
 const Styles = () => {
   return (

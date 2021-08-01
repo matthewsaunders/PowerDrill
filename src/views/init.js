@@ -1,6 +1,6 @@
 import React from "react";
 
-import PowerDrill from "./powerdrill";
+import PowerDrill from "./Powerdrill";
 
 aha.on("powerdrill", ({ fields, onUnmounted }, { identifier, settings }) => {
   const accountId = aha.account.id;

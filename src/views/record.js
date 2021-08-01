@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import Column from "./column";
-import Project from "./records/project";
-import Iteration from "./records/iteration";
-import Feature from "./records/feature";
+import Column from "./Column";
+import Project from "./records/Project";
+import Iteration from "./records/Iteration";
+import Feature from "./records/Feature";
 
 const Styles = () => {
   return (
@@ -41,26 +41,6 @@ const Styles = () => {
       font-size: 24px;
       font-weight: 300;
       line-height: 30px;
-    }
-    .Record__actions {
-      width: 100%;
-      text-align: right;
-    }
-    .Record__viewBtn {
-      text-decoration: none;
-      padding: 4px 8px;
-      border: 1px solid black;
-    }
-    .Record__viewBtn:hover {
-      text-decoration: none;
-      background-color: #f7f7f7;
-    }
-    .Record__viewBtn--card {
-      border-right: none;
-      border-radius: 4px 0px 0px 4px;
-    }
-    .Record__viewBtn--details {
-      border-radius: 0px 4px 4px 0px;
     }
     `}
     </style>
