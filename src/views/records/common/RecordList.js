@@ -15,16 +15,6 @@ const Styles = () => {
       list-style-type: none;
       margin: 0;
     }
-    .RecordList__record {
-      padding: 8px;
-      margin: 8px 0px;
-      border: 1px solid black;
-      border-radius: 2px;
-    }
-    .RecordList__record:hover {
-      background-color: var(--aha-blue-100);
-      cursor: pointer;
-    }
     `}
     </style>
   );

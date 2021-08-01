@@ -41,6 +41,23 @@ const Styles = () => {
       font-size: 24px;
       font-weight: 300;
       line-height: 30px;
+      margin: 0;
+    }
+    .Record__section {
+      margin: 16px 0px;
+    }
+    .Record__sectionHeading {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 0;
+    }
+    .Record__sectionContent {
+      margin-left: 8px;
+    }
+    .Record__date {
+      color: #9999a3;
+      font-style: italic;
     }
     `}
     </style>
