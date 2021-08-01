@@ -17,16 +17,14 @@ const Styles = () => {
     .PowerDrill {
     }
     .PowerDrill__row {
-      min-height: 500px;
       width: 100%;
-      height: 100%;
+      height: 80vh;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: stretch;
       overflow-x: scroll;
-      border: 1px solid red;
     }
     .PowerDrill__row > div:first-child {
       margin-left: 8px;
@@ -40,9 +38,8 @@ const Styles = () => {
     .PowerDrill__column {
       border: 2px solid black;
       background-color: white;
-      min-height: 100%;
-      height: 100%;
       min-width: 550px;
+      overflow-y: scroll;
     }
 
     button {
