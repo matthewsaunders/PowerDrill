@@ -45,8 +45,6 @@ const Iteration = ({ powerDrillRecord, index, dispatch }) => {
   const record = powerDrillRecord.record;
 
   if (record) {
-    console.log('--> record');
-    console.log(record);
     return (
       <div className="Record">
         <Styles />

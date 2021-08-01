@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 import Loading from "./common/Loading";
+import CollapsableRecordList from "./common/CollapsableRecordList";
 
 const Styles = () => {
   return (
@@ -24,20 +24,21 @@ const Feature = ({ powerDrillRecord, index, dispatch }) => {
   }
 
   if (record) {
+    console.log('--> record');
+    console.log(record);
     return (
       <div className="Record">
         <Styles />
-        <h3 className="Record__name">{ record.name }</h3>
-        <p>{ record.id }</p>
 
-        <p>Requirements</p>
-        <ul>
-          {
-            record.requirements.map((requirement) => 
-              <li onClick={() => handleRequirementClick(requirement.id)}>{requirement.name}</li>
-            )
-          }
-        </ul>
+        <h3 className="Record__name">{ record.name }</h3>
+
+        <CollapsableRecordList
+          name="Requirements"
+          records={record.requirements}
+          index={index}
+          dispatch={dispatch}
+          opened={true}
+        />
       </div>
     );
   } else {

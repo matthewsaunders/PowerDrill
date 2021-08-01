@@ -55,8 +55,8 @@ const displayLinkedRecord = (shouldDisplay) => {
   return shouldDisplay ? '' : 'CollapsableRecordList__recordsList--hidden';
 }
 
-const CollapsableRecordList = ({name, records, dispatch, index}) => {
-  const [displayRecords, setDisplayRecords] = useState(false);
+const CollapsableRecordList = ({name, records, dispatch, index, opened = false}) => {
+  const [displayRecords, setDisplayRecords] = useState(opened);
 
   return (
     <>

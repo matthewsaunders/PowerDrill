@@ -120,14 +120,7 @@ const fetchRecord = async (powerDrillRecord) => {
       }
     case 'iteration':
       response = await aha.graphQuery(Query.iteration(powerDrillRecord.id));
-      console.log('response');
-      console.log(response);
       const iteration = response.iteration;
-      // const iteration = await aha.models.Iteration.select('id', 'name', 'status').find(powerDrillRecord.id);
-      // const features = await aha.models.Feature.select('id', 'name').where({ projectId: aha.project.id, iterationId: powerDrillRecord.id }).all();
-
-      // response = await aha.graphQuery(Query.iteration(powerDrillRecord.id));
-      // const iteration = new aha.models.I(response.feature);
 
       return {
         record: iteration,

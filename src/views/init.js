@@ -14,11 +14,6 @@ aha.on("powerdrill", ({ fields, onUnmounted }, { identifier, settings }) => {
         id: projectId,
         record: null,
       },
-      {
-        type: 'iteration',
-        id: '6955866318516622190',
-        record: null,
-      }
     ],
   };
 
