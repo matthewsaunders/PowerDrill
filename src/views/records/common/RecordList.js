@@ -1,4 +1,5 @@
 import React from "react";
+import RecordCard from "./RecordCard";
 
 const Styles = () => {
   return (
@@ -46,7 +47,10 @@ const RecordList = ({ records, className, dispatch, index }) => {
       <ul className={`RecordList ${className}`}>
         {
           records.map((record) => 
-            <li className="RecordList__record" onClick={() => handleRecordClick(dispatch, record, index)}>{record.name}</li>
+            <RecordCard
+              record={record}
+              handleRecordClick={() => { handleRecordClick(dispatch, record, index) }}
+            />
           )
         }
       </ul>

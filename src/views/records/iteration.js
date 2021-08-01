@@ -27,6 +27,8 @@ const Iteration = ({ powerDrillRecord, index, dispatch }) => {
 
         <h3 className="Record__name">{ record.name }</h3>
 
+        {/* <p dangerouslySetInnerHTML={{ __html: record.description.htmlBody }} ></p> */}
+
         <MixedRecordList 
           records={powerDrillRecord.linkedRecords.records}
           index={index}

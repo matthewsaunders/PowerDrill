@@ -6,6 +6,7 @@ aha.on("powerdrill", ({ fields, onUnmounted }, { identifier, settings }) => {
   const accountId = aha.account.id;
   const projectId = aha.project.id;
 
+  // TODO: Enabled saved states
   const savedState = {
     records: [
       {
@@ -13,6 +14,11 @@ aha.on("powerdrill", ({ fields, onUnmounted }, { identifier, settings }) => {
         id: projectId,
         record: null,
       },
+      {
+        type: 'iteration',
+        id: '6955866318516622190',
+        record: null,
+      }
     ],
   };
 
