@@ -36,6 +36,7 @@ const Styles = () => {
     .Record__content {
       padding: 20px 16px;
       background-color: white;
+      // overflow-y: scroll;
     }
     .Record__name {
       font-size: 24px;

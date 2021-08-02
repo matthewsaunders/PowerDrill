@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Styles = () => {
   return (
@@ -36,6 +36,24 @@ const Styles = () => {
 }
 
 const RecordLinks = ({drawerLink, detailsLink}) => {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  useEffect(() => {
+    if(!openDrawer) return;
+
+    try {
+      window.AhaDrawer = require("javascripts/drawer");
+      window.AhaDrawer.showUrl(drawerLink);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+  const handleDrawerLinkClick = (event, url) => {
+    event.preventDefault();
+    setOpenDrawer(true);
+  }
+
   return (
     <>
       <Styles />
@@ -44,8 +62,9 @@ const RecordLinks = ({drawerLink, detailsLink}) => {
           { drawerLink &&
             <a
               href={drawerLink}
-              className={`RecordLink__btn ${detailsLink ? 'RecordLink__btn--drawer' : 'RecordLink__btn--solo'}`}
               data-drawer-url={drawerLink}
+              className={`drawer-url RecordLink__btn ${detailsLink ? 'RecordLink__btn--drawer' : 'RecordLink__btn--solo'}`}
+              onClick={(event) => {handleDrawerLinkClick(event, drawerLink)}}
             >
               Drawer
             </a>

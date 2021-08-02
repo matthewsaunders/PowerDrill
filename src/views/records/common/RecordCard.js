@@ -24,10 +24,15 @@ const Styles = () => {
         margin-top: 4px;
       }
       .RecordCard__cell {
+        margin: 0px 4px;
       }
       .RecordCard__referenceNum {
         color: #9999a3;
         flex-grow: 1;
+      }
+      .RecordCard__avatar {
+        border-radius: 50%;
+        width: 16px;
       }
       .RecordCard__status {
       }
@@ -57,6 +62,15 @@ const RecordCard = ({ record, handleRecordClick }) => {
               <div className="RecordCard__cell RecordCard__referenceNum">
                 {record.referenceNum}
               </div>
+            }
+
+            {
+              record.assignedToUser &&
+              <img
+                src={record.assignedToUser.avatarUrl}
+                className="RecordCard__avatar"
+                title={record.assignedToUser.name}
+              />
             }
 
             { hasStatus &&

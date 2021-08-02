@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer } from "react";
-
 import Record from "./Record";
 import Query from "./Query";
 
@@ -161,7 +160,9 @@ const PowerDrill = ({ initConfig }) => {
     <div class="PowerDrill">
       <Styles />
 
-      <div className='title'>PowerDrill</div>
+      <div className='title'>
+        PowerDrill
+      </div>
 
       <div class="PowerDrill__row">
         {state.records.map((record, index) =>

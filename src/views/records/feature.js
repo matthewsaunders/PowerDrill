@@ -1,6 +1,7 @@
 import React from "react";
 import Loading from "./common/Loading";
 import CollapsableRecordList from "./common/CollapsableRecordList";
+import RecordLinks from "./common/RecordLinks";
 
 const Styles = () => {
   return (
@@ -14,15 +15,6 @@ const Styles = () => {
 const Feature = ({ powerDrillRecord, index, dispatch }) => {
   const record = powerDrillRecord.record;
 
-  const handleRequirementClick = (requirementId) => {
-    dispatch({
-      type: 'addRecord',
-      recordType: 'requirement',
-      id: requirementId,
-      index: index,
-    });
-  }
-
   if (record) {
     console.log('--> record');
     console.log(record);
@@ -30,7 +22,14 @@ const Feature = ({ powerDrillRecord, index, dispatch }) => {
       <div className="Record">
         <Styles />
 
+        <RecordLinks detailsLink={record.path} drawerLink={record.path} />
+
         <h3 className="Record__name">{ record.name }</h3>
+
+        <div className="Record__section">
+          <h3 className="Record__sectionHeading">Description</h3>
+          <div dangerouslySetInnerHTML={{ __html: record.description.htmlBody }}></div>
+        </div>
 
         <CollapsableRecordList
           name="Requirements"
