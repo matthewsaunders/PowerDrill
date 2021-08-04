@@ -35,7 +35,10 @@ const Iteration = ({ powerDrillRecord, index, dispatch }) => {
       <div className="Record">
         <Styles />
         
-        <RecordLinks detailsLink={detailsUrl(record.id)} drawerLink={detailsUrl(record.id)} />
+        <RecordLinks
+          detailsLink={detailsUrl(record.id)}
+          drawerLink={detailsUrl(record.id)}
+        />
 
         <h3 className="Record__name">{ record.name }</h3>
         <p className="Record__date">{ iterationDateRange(record.startDate, record.duration) }</p>

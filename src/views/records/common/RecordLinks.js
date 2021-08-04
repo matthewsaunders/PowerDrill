@@ -36,22 +36,9 @@ const Styles = () => {
 }
 
 const RecordLinks = ({drawerLink, detailsLink}) => {
-  const [openDrawer, setOpenDrawer] = useState(false);
-
-  useEffect(() => {
-    if(!openDrawer) return;
-
-    try {
-      window.AhaDrawer = require("javascripts/drawer");
-      window.AhaDrawer.showUrl(drawerLink);
-    } catch (error) {
-      console.error(error);
-    }
-  });
-
   const handleDrawerLinkClick = (event, url) => {
     event.preventDefault();
-    setOpenDrawer(true);
+    aha.drawer.showRecord({ path: url });
   }
 
   return (
@@ -61,8 +48,7 @@ const RecordLinks = ({drawerLink, detailsLink}) => {
         <div className="RecordLinks__btns">
           { drawerLink &&
             <a
-              href={drawerLink}
-              data-drawer-url={drawerLink}
+              href=""
               className={`drawer-url RecordLink__btn ${detailsLink ? 'RecordLink__btn--drawer' : 'RecordLink__btn--solo'}`}
               onClick={(event) => {handleDrawerLinkClick(event, drawerLink)}}
             >
