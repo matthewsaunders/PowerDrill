@@ -1,24 +1,14 @@
 # PowerDrill
   
-TODO: Supply a short overview of the functionality the extension brings to Aha! Develop
-This [Aha! Develop](https://www.aha.io/develop/overview) extension enables...
-
-It provides these contributions:
-
-TODO: Add a contribution list here. These should briefly describe each of the features provided by this extension.
+The PowerDrill extension enables you to drill down the Aha! record hierarchy starting from the current workspace to view records in your Aha! account.  Records in PowerDrill are view only, but a record can be edited by opening the record using the _Drawer_ or _Details_ links.
 
 ## Demo
 
-TODO: Add a short .gif screen recording showing some of the highlights of your extension. This can be recorded using a tool like [LICECap](https://www.cockos.com/licecap/).
-
-![demo](demo.gif)
+![demo](powerdrill.gif)
 
 ## Installing the extension
 
 **Note: In order to install an extension into your Aha! Develop account, you must be an account administrator.**
-
-TODO: Fill in a link to your built extension package
-Install the PowerDrill extension by clicking [here](https://secure.aha.io/settings/account/extensions/install?url=).
 
 ## Working on the extension
 

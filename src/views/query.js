@@ -153,6 +153,39 @@ const Query = {
     }
     `;
   },
+  requirement: (requirementId) => {
+    return `
+    {
+      requirement(id: ${requirementId}) {
+        assignedToUser {
+          avatarUrl
+          name
+        }
+        description {
+          htmlBody
+        }
+        id
+        name
+        path
+        referenceNum
+        tasks {
+          id
+          name
+          path
+          status
+        }
+        teamWorkflowStatus {
+          color
+          name
+        }
+        workflowStatus {
+          color
+          name
+        }
+      }
+    }
+    `;
+  },
 };
 
 export default Query;

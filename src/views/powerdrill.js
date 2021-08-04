@@ -129,10 +129,16 @@ const fetchRecord = async (powerDrillRecord) => {
       const feature = response.feature;
 
       return {
-        record: feature,
+        record: response.feature,
       };
-    requirement:
-      return {};
+    case 'requirement':
+      console.log(`id: ${powerDrillRecord.id}`);
+      response = await aha.graphQuery(Query.requirement(powerDrillRecord.id));
+      const requirement = response.requirement;
+
+      return {
+        record: requirement,
+      };
     default:
       throw new Error();
   }

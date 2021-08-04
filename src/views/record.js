@@ -4,6 +4,8 @@ import Column from "./Column";
 import Project from "./records/Project";
 import Iteration from "./records/Iteration";
 import Feature from "./records/Feature";
+import Requirement from "./records/Requirement";
+import UndefinedRecord from "./records/UndefinedRecord";
 
 const Styles = () => {
   return (
@@ -74,10 +76,9 @@ const renderRecord = (powerDrillRecord, index, dispatch) => {
     case 'feature':
       return <Feature powerDrillRecord={powerDrillRecord} index={index} dispatch={dispatch} />
     case 'requirement':
-      return <p>req</p>
-      // return <Requirement powerDrillRecord={powerDrillRecord} index={index} dispatch={dispatch} />
+      return <Requirement powerDrillRecord={powerDrillRecord} index={index} dispatch={dispatch} />
     default:
-      return <p>Whoops</p>
+      return <UndefinedRecord recordType={powerDrillRecord.type} />
   }
 }
 
